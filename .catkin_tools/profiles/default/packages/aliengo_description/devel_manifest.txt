@@ -1,0 +1,5 @@
+unitree_ros/robots/aliengo_description
+/home/knapsack/workspaces/unitree_ws/devel/.private/aliengo_description/cmake.lock /home/knapsack/workspaces/unitree_ws/devel/./cmake.lock
+/home/knapsack/workspaces/unitree_ws/devel/.private/aliengo_description/share/aliengo_description/cmake/aliengo_descriptionConfig-version.cmake /home/knapsack/workspaces/unitree_ws/devel/share/aliengo_description/cmake/aliengo_descriptionConfig-version.cmake
+/home/knapsack/workspaces/unitree_ws/devel/.private/aliengo_description/share/aliengo_description/cmake/aliengo_descriptionConfig.cmake /home/knapsack/workspaces/unitree_ws/devel/share/aliengo_description/cmake/aliengo_descriptionConfig.cmake
+/home/knapsack/workspaces/unitree_ws/devel/.private/aliengo_description/lib/pkgconfig/aliengo_description.pc /home/knapsack/workspaces/unitree_ws/devel/lib/pkgconfig/aliengo_description.pc

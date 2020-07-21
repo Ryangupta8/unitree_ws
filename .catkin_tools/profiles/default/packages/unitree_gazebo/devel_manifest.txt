@@ -1,0 +1,7 @@
+unitree_ros/unitree_gazebo
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_gazebo/cmake.lock /home/knapsack/workspaces/unitree_ws/devel/./cmake.lock
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_gazebo/share/unitree_gazebo/cmake/unitree_gazeboConfig-version.cmake /home/knapsack/workspaces/unitree_ws/devel/share/unitree_gazebo/cmake/unitree_gazeboConfig-version.cmake
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_gazebo/share/unitree_gazebo/cmake/unitree_gazeboConfig.cmake /home/knapsack/workspaces/unitree_ws/devel/share/unitree_gazebo/cmake/unitree_gazeboConfig.cmake
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_gazebo/lib/libunitreeDrawForcePlugin.so /home/knapsack/workspaces/unitree_ws/devel/lib/libunitreeDrawForcePlugin.so
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_gazebo/lib/libunitreeFootContactPlugin.so /home/knapsack/workspaces/unitree_ws/devel/lib/libunitreeFootContactPlugin.so
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_gazebo/lib/pkgconfig/unitree_gazebo.pc /home/knapsack/workspaces/unitree_ws/devel/lib/pkgconfig/unitree_gazebo.pc

@@ -1,0 +1,5 @@
+unitree_ros/robots/a1_description
+/home/knapsack/workspaces/unitree_ws/devel/.private/a1_description/cmake.lock /home/knapsack/workspaces/unitree_ws/devel/./cmake.lock
+/home/knapsack/workspaces/unitree_ws/devel/.private/a1_description/share/a1_description/cmake/a1_descriptionConfig-version.cmake /home/knapsack/workspaces/unitree_ws/devel/share/a1_description/cmake/a1_descriptionConfig-version.cmake
+/home/knapsack/workspaces/unitree_ws/devel/.private/a1_description/share/a1_description/cmake/a1_descriptionConfig.cmake /home/knapsack/workspaces/unitree_ws/devel/share/a1_description/cmake/a1_descriptionConfig.cmake
+/home/knapsack/workspaces/unitree_ws/devel/.private/a1_description/lib/pkgconfig/a1_description.pc /home/knapsack/workspaces/unitree_ws/devel/lib/pkgconfig/a1_description.pc
