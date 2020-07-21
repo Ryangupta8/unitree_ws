@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="slam" default="false"/>
+  <arg name="gui" default="true"/>
+
+  <include file="$(find unitree_gazebo)/launch/normal.launch">
+     <arg name="ahg_sim" value="true"/>
+     <arg name="rname" value="laikago"/>
+  </include>
+
+  <group if="$(arg slam)">
+    <include file="$(find unitree_navigation)/launch/gmapping.launch"/>
+  </group>
+  <include file="$(find unitree_navigation)/launch/move_base.launch">
+    <arg name="slam" value="$(arg slam)"/>
+  </include>
+
+  <group if="$(arg gui)">
+     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find unitree_gazebo)/config/laikago.rviz" output="screen"/>
+  </group>
+
+
+
+</launch>

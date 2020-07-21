@@ -12,13 +12,15 @@ find_package(catkin REQUIRED COMPONENTS
     tf
     geometry_msgs
     unitree_legged_msgs
+    nav_msgs
 )
 
 find_package(gazebo REQUIRED)
 
 catkin_package(
     CATKIN_DEPENDS 
-    unitree_legged_msgs 
+    unitree_legged_msgs
+    nav_msgs 
 )
 
 include_directories(

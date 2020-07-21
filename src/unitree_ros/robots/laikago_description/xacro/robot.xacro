@@ -11,14 +11,15 @@
     <xacro:property name="rolloverProtection" value="false"/>
 
     <!-- Debug mode will hung up the robot, use "true" or "false" to switch it. -->
-    <xacro:if value="$(arg DEBUG)">
+    <!-- COMMENTED OUR BY RYAN -->
+<!--     <xacro:if value="$(arg DEBUG)">
         <link name="world"/>
         <joint name="base_static_joint" type="fixed">
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <parent link="world"/>
             <child link="base"/>
         </joint>
-    </xacro:if> 
+    </xacro:if>  -->
 
     <link name="base">
         <visual>
@@ -116,6 +117,122 @@
             </geometry>
         </collision>
     </link>
+
+<!-- Front Camera -->
+    <joint name="front_camera_joint" type="fixed">
+        <origin xyz="0.07 -0.015 0.12" rpy="0 0 0"/>
+        <parent link="trunk"/>
+        <child link="front_camera_link"/>
+    </joint>
+
+    <link name="front_camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+            <geometry>
+                <mesh filename="package://laikago_description/meshes/r200.dae" />
+            </geometry>
+        </visual>
+        <!-- <collision>
+            <origin xyz="0.003 0.065 0.007" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.012 0.132 0.020"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <joint name="front_camera_rgb_joint" type="fixed">
+        <origin xyz="0.005 0.018 0.013" rpy="0 0 0"/>
+        <parent link="front_camera_link"/>
+        <child link="front_camera_rgb_frame"/>
+    </joint>
+    <link name="front_camera_rgb_frame"/>
+
+    <joint name="front_camera_rgb_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+        <parent link="front_camera_rgb_frame"/>
+        <child link="front_camera_rgb_optical_frame"/>
+    </joint>
+    <link name="front_camera_rgb_optical_frame"/>
+
+<!-- RL Camera -->
+    <joint name="rl_camera_joint" type="fixed">
+        <origin xyz="-0.03 0.03 0.12" rpy="0 0 -4.18879"/>
+        <parent link="trunk"/>
+        <child link="rl_camera_link"/>
+    </joint>
+
+    <link name="rl_camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+            <geometry>
+                <mesh filename="package://laikago_description/meshes/r200.dae" />
+            </geometry>
+        </visual>
+        <!-- <collision>
+            <origin xyz="0.003 0.065 0.007" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.012 0.132 0.020"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <joint name="rl_camera_rgb_joint" type="fixed">
+        <origin xyz="0.005 0.018 0.013" rpy="0 0 0"/>
+        <parent link="rl_camera_link"/>
+        <child link="rl_camera_rgb_frame"/>
+    </joint>
+    <link name="rl_camera_rgb_frame"/>
+
+    <joint name="rl_camera_rgb_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+        <parent link="rl_camera_rgb_frame"/>
+        <child link="rl_camera_rgb_optical_frame"/>
+    </joint>
+    <link name="rl_camera_rgb_optical_frame"/>
+
+<!-- RR Camera -->
+    <joint name="rr_camera_joint" type="fixed">
+        <origin xyz="-0.05 -0.015 0.12" rpy="0 0 4.18879"/>
+        <parent link="trunk"/>
+        <child link="rr_camera_link"/>
+    </joint>
+
+    <link name="rr_camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+            <geometry>
+                <mesh filename="package://laikago_description/meshes/r200.dae" />
+            </geometry>
+        </visual>
+        <!-- <collision>
+            <origin xyz="0.003 0.065 0.007" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.012 0.132 0.020"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <joint name="rr_camera_rgb_joint" type="fixed">
+        <origin xyz="0.005 0.018 0.013" rpy="0 0 0"/>
+        <parent link="rr_camera_link"/>
+        <child link="rr_camera_rgb_frame"/>
+    </joint>
+    <link name="rr_camera_rgb_frame"/>
+
+    <joint name="rr_camera_rgb_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+        <parent link="rr_camera_rgb_frame"/>
+        <child link="rr_camera_rgb_optical_frame"/>
+    </joint>
+    <link name="rr_camera_rgb_optical_frame"/>
+
+    <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+    <VLP-16 parent="base" name="velodyne" topic="lidar_points" hz="10" samples="1024" gpu="false" lasers="16" max_range="100">
+        <origin xyz="0 0.0 0.16" rpy="0 0 0" />
+    </VLP-16>
+
+
+
     <xacro:leg name="FR" mirror="-1" mirror_dae="False" front_hind="1" front_hind_dae="True">
         <origin rpy="0 0 0" xyz="${leg_offset_x} ${-leg_offset_y} 0"/>
     </xacro:leg>

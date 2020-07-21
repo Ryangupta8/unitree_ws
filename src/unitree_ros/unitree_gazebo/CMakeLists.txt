@@ -12,17 +12,22 @@ find_package(catkin REQUIRED COMPONENTS
     tf
     geometry_msgs
     unitree_legged_msgs
+    pluginlib
+    nodelet
 )
 
 find_package(gazebo REQUIRED)
 
 catkin_package(
     CATKIN_DEPENDS 
-    unitree_legged_msgs 
+    unitree_legged_msgs
+    pluginlib
+    std_msgs
+    # INCLUDE_DIRS include 
 )
 
 include_directories(
-    # include
+	# include
     ${Boost_INCLUDE_DIR}
     ${catkin_INCLUDE_DIRS}
     ${GAZEBO_INCLUDE_DIRS}
@@ -31,10 +36,12 @@ include_directories(
 link_directories(${GAZEBO_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
+#### This is now declared in unitree_controller package
 # # Declare a C++ library
 # add_library(${PROJECT_NAME}
 #     src/body.cpp 
-# )
+# ) 
+
 
 # add_dependencies(${PROJECT_NAME} unitree_legged_msgs_gencpp)
 
@@ -48,10 +55,13 @@ target_link_libraries(unitreeFootContactPlugin ${catkin_LIBRARIES} ${GAZEBO_LIBR
 add_library(unitreeDrawForcePlugin SHARED plugin/draw_force_plugin.cc)
 target_link_libraries(unitreeDrawForcePlugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
+
+######## This is now declared in unitree_controller package
 # add_executable(unitree_external_force src/exe/external_force.cpp)
 # target_link_libraries(unitree_external_force ${catkin_LIBRARIES})
 
 # add_executable(unitree_servo src/exe/servo.cpp)
 # target_link_libraries(unitree_servo ${PROJECT_NAME} ${catkin_LIBRARIES})
+# )
 
 

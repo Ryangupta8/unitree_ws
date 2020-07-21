@@ -1,0 +1,63 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+LaserScanToPointCloudNodelet	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^class LaserScanToPointCloudNodelet : public nodelet::Nodelet$/;"	c	namespace:pointcloud_to_laserscan
+LaserScanToPointCloudNodelet	src/laserscan_to_pointcloud_nodelet.cpp	/^LaserScanToPointCloudNodelet::LaserScanToPointCloudNodelet()$/;"	f	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+MessageFilter	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^typedef tf2_ros::MessageFilter<sensor_msgs::LaserScan> MessageFilter;$/;"	t	namespace:pointcloud_to_laserscan
+MessageFilter	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^typedef tf2_ros::MessageFilter<sensor_msgs::PointCloud2> MessageFilter;$/;"	t	namespace:pointcloud_to_laserscan
+POINTCLOUD_TO_LASERSCAN_LASERSCAN_TO_POINTCLOUD_NODELET_H	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	42;"	d
+POINTCLOUD_TO_LASERSCAN_POINTCLOUD_TO_LASERSCAN_NODELET_H	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	42;"	d
+PointCloudToLaserScanNodelet	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^class PointCloudToLaserScanNodelet : public nodelet::Nodelet$/;"	c	namespace:pointcloud_to_laserscan
+PointCloudToLaserScanNodelet	src/pointcloud_to_laserscan_nodelet.cpp	/^PointCloudToLaserScanNodelet::PointCloudToLaserScanNodelet()$/;"	f	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+angle_increment_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+angle_max_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+angle_min_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+cloudCb	src/pointcloud_to_laserscan_nodelet.cpp	/^void PointCloudToLaserScanNodelet::cloudCb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)$/;"	f	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+connectCb	src/laserscan_to_pointcloud_nodelet.cpp	/^void LaserScanToPointCloudNodelet::connectCb()$/;"	f	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+connectCb	src/pointcloud_to_laserscan_nodelet.cpp	/^void PointCloudToLaserScanNodelet::connectCb()$/;"	f	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+connect_mutex_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  boost::mutex connect_mutex_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+connect_mutex_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  boost::mutex connect_mutex_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+disconnectCb	src/laserscan_to_pointcloud_nodelet.cpp	/^void LaserScanToPointCloudNodelet::disconnectCb()$/;"	f	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+disconnectCb	src/pointcloud_to_laserscan_nodelet.cpp	/^void PointCloudToLaserScanNodelet::disconnectCb()$/;"	f	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+failureCallback	src/laserscan_to_pointcloud_nodelet.cpp	/^void LaserScanToPointCloudNodelet::failureCallback(const sensor_msgs::LaserScanConstPtr& scan_msg,$/;"	f	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+failureCb	src/pointcloud_to_laserscan_nodelet.cpp	/^void PointCloudToLaserScanNodelet::failureCb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg,$/;"	f	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+inf_epsilon_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double inf_epsilon_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+input_queue_size_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  unsigned int input_queue_size_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+input_queue_size_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  unsigned int input_queue_size_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+main	src/laserscan_to_pointcloud_node.cpp	/^int main(int argc, char** argv)$/;"	f
+main	src/pointcloud_to_laserscan_node.cpp	/^int main(int argc, char** argv)$/;"	f
+max_height_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+message_filter_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  boost::shared_ptr<MessageFilter> message_filter_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+message_filter_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  boost::shared_ptr<MessageFilter> message_filter_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+min_height_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+nh_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  ros::NodeHandle nh_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+nh_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  ros::NodeHandle nh_, private_nh_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+onInit	src/laserscan_to_pointcloud_nodelet.cpp	/^void LaserScanToPointCloudNodelet::onInit()$/;"	f	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+onInit	src/pointcloud_to_laserscan_nodelet.cpp	/^void PointCloudToLaserScanNodelet::onInit()$/;"	f	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+pointcloud_to_laserscan	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^namespace pointcloud_to_laserscan$/;"	n
+pointcloud_to_laserscan	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^namespace pointcloud_to_laserscan$/;"	n
+pointcloud_to_laserscan	src/laserscan_to_pointcloud_nodelet.cpp	/^namespace pointcloud_to_laserscan$/;"	n	file:
+pointcloud_to_laserscan	src/pointcloud_to_laserscan_nodelet.cpp	/^namespace pointcloud_to_laserscan$/;"	n	file:
+private_nh_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  ros::NodeHandle private_nh_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+private_nh_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  ros::NodeHandle nh_, private_nh_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+projector_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  laser_geometry::LaserProjection projector_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+pub_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  ros::Publisher pub_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+pub_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  ros::Publisher pub_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+range_max_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+range_min_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+scanCallback	src/laserscan_to_pointcloud_nodelet.cpp	/^void LaserScanToPointCloudNodelet::scanCallback(const sensor_msgs::LaserScanConstPtr& scan_msg)$/;"	f	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+scan_time_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+sub_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  message_filters::Subscriber<sensor_msgs::LaserScan> sub_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+sub_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  message_filters::Subscriber<sensor_msgs::PointCloud2> sub_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+target_frame_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  std::string target_frame_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+target_frame_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  std::string target_frame_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+tf2_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  boost::shared_ptr<tf2_ros::Buffer> tf2_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+tf2_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  boost::shared_ptr<tf2_ros::Buffer> tf2_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+tf2_listener_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  boost::shared_ptr<tf2_ros::TransformListener> tf2_listener_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+tf2_listener_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  boost::shared_ptr<tf2_ros::TransformListener> tf2_listener_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+tolerance_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  double tolerance_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet
+transform_tolerance_	include/pointcloud_to_laserscan/laserscan_to_pointcloud_nodelet.h	/^  double transform_tolerance_;$/;"	m	class:pointcloud_to_laserscan::LaserScanToPointCloudNodelet
+use_inf_	include/pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet.h	/^  bool use_inf_;$/;"	m	class:pointcloud_to_laserscan::PointCloudToLaserScanNodelet

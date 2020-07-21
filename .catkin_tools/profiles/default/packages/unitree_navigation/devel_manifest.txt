@@ -1,0 +1,5 @@
+unitree_ros/unitree_navigation
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_navigation/cmake.lock /home/knapsack/workspaces/unitree_ws/devel/./cmake.lock
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_navigation/share/unitree_navigation/cmake/unitree_navigationConfig.cmake /home/knapsack/workspaces/unitree_ws/devel/share/unitree_navigation/cmake/unitree_navigationConfig.cmake
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_navigation/share/unitree_navigation/cmake/unitree_navigationConfig-version.cmake /home/knapsack/workspaces/unitree_ws/devel/share/unitree_navigation/cmake/unitree_navigationConfig-version.cmake
+/home/knapsack/workspaces/unitree_ws/devel/.private/unitree_navigation/lib/pkgconfig/unitree_navigation.pc /home/knapsack/workspaces/unitree_ws/devel/lib/pkgconfig/unitree_navigation.pc
