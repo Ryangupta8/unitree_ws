@@ -118,9 +118,56 @@
         </collision>
     </link>
 
+<!-- Laptop Mount -->
+    <joint name="laptop_mount_joint" type="fixed">
+        <origin xyz="-0.2 0.15 0.12" rpy="0 0 0"/>
+        <parent link="trunk"/>
+        <child link="laptop_mount"/>
+    </joint>
+    <link name="laptop_mount">
+        <!-- <inertial>
+          <origin
+            xyz="-0.0017019 -8.36089999999962E-05 0.062029"
+            rpy="0 0 0" />
+          <mass
+            value="2.6502" />
+          <inertia
+            ixx="0.017805"
+            ixy="1.1578E-06"
+            ixz="4.1834E-05"
+            iyy="0.046123"
+            iyz="-4.00309999999992E-06"
+            izz="0.047358" />
+        </inertial> -->
+        <visual>
+          <origin
+            xyz="0 0 0"
+            rpy="1.5707963267949 0 0" />
+          <geometry>
+            <mesh
+              filename="package://laikago_description/meshes/laptop_mount.STL" />
+          </geometry>
+          <material
+            name="">
+            <color
+              rgba="0.79216 0.81961 0.93333 1" />
+          </material>
+        </visual>
+        <collision>
+          <origin
+            xyz="0 0 0"
+            rpy="1.5707963267949 0 0" />
+          <geometry>
+            <mesh
+              filename="package://laikago_description/meshes/laptop_mount.STL" />
+          </geometry>
+        </collision>
+    </link>
+
+
 <!-- Front Camera -->
     <joint name="front_camera_joint" type="fixed">
-        <origin xyz="0.07 -0.015 0.12" rpy="0 0 0"/>
+        <origin xyz="0.045 -0.05 0.25" rpy="0 0 0"/>
         <parent link="trunk"/>
         <child link="front_camera_link"/>
     </joint>
@@ -129,7 +176,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
             <geometry>
-                <mesh filename="package://laikago_description/meshes/r200.dae" />
+                <mesh filename="package://laikago_description/meshes/azurekinect.dae" />
             </geometry>
         </visual>
         <!-- <collision>
@@ -156,7 +203,7 @@
 
 <!-- RL Camera -->
     <joint name="rl_camera_joint" type="fixed">
-        <origin xyz="-0.03 0.03 0.12" rpy="0 0 -4.18879"/>
+        <origin xyz="0.03 0.065 0.25" rpy="0 0 -4.18879"/>
         <parent link="trunk"/>
         <child link="rl_camera_link"/>
     </joint>
@@ -165,7 +212,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
             <geometry>
-                <mesh filename="package://laikago_description/meshes/r200.dae" />
+                <mesh filename="package://laikago_description/meshes/azurekinect.dae" />
             </geometry>
         </visual>
         <!-- <collision>
@@ -192,7 +239,7 @@
 
 <!-- RR Camera -->
     <joint name="rr_camera_joint" type="fixed">
-        <origin xyz="-0.05 -0.015 0.12" rpy="0 0 4.18879"/>
+        <origin xyz="-0.065 -0.015 0.25" rpy="0 0 4.18879"/>
         <parent link="trunk"/>
         <child link="rr_camera_link"/>
     </joint>
@@ -201,7 +248,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
             <geometry>
-                <mesh filename="package://laikago_description/meshes/r200.dae" />
+                <mesh filename="package://laikago_description/meshes/azurekinect.dae" />
             </geometry>
         </visual>
         <!-- <collision>
@@ -228,7 +275,7 @@
 
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
     <VLP-16 parent="base" name="velodyne" topic="lidar_points" hz="10" samples="1024" gpu="false" lasers="16" max_range="100">
-        <origin xyz="0 0.0 0.16" rpy="0 0 0" />
+        <origin xyz="0.0075 0.0 0.3025" rpy="0 0 0" />
     </VLP-16>
 
 
