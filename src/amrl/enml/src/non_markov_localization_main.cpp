@@ -96,7 +96,6 @@ using namespace geometry;
 using namespace math_util;
 
 typedef KDNodeValue<float, 2> KDNodeValue2f;
-//std::string enml_pkg_path = ros::package::getPath("enml");
 
 namespace {
 // Name of the topic that scan data is published on.
@@ -108,11 +107,6 @@ CONFIG_STRING(odom_topic, "RobotConfig.odometry_topic");
 // Name of the topic that location reset commands are published on.
 CONFIG_STRING(initialpose_topic, "RobotConfig.initialpose_topic");
 
-string config_path_ = ".";
-
-// The name of the robot config file.
-string robot_config_file_ = config_path_ + "/config/robot.lua";
-
 // ROS message for publishing SE(2) pose with map name.
 amrl_msgs::Localization2DMsg localization_msg_;
 
@@ -121,7 +115,6 @@ amrl_msgs::VisualizationMsg visualization_msg_;
 
 util_random::Random rand_;
 }  // namespace
-
 
 
 // Name of the map to localize the robot on.
@@ -148,7 +141,13 @@ float kMaxOdometryDeltaAngle = DegToRad(15.0);
 pthread_mutex_t relocalization_mutex_ = PTHREAD_MUTEX_INITIALIZER;
 
 // The directory where all the maps are stored.
-string kMapsDirectory(config_path_+"/maps");
+const char* maps_dir_ = "maps";
+
+// Directory containing all config files, including `common.lua` and `enml.lua`
+const char* config_dir_ = "config";
+
+// name of the robot configuration file in config_dir_ to use
+const char* robot_config_ = "robot.lua";
 
 // Index of test set. This will determine which file the results of the test are
 // saved to.
@@ -185,7 +184,7 @@ ros::Publisher localization_publisher_;
 NonMarkovLocalization::LocalizationOptions localization_options_;
 
 // Main class instance for Non-Markov Localization.
-NonMarkovLocalization* localization_; //(kMapsDirectory);
+NonMarkovLocalization* localization_;
 
 // The last observed laser scan, used for auto localization.
 sensor_msgs::LaserScan last_laser_scan_;
@@ -390,12 +389,10 @@ bool LoadConfiguration(NonMarkovLocalization::LocalizationOptions* options) {
   ENML_FLOAT_CONFIG(max_update_period);
   ENML_STRING_CONFIG(map_name);
   config_reader::ConfigReader reader({
-      config_path_ + "/config/common.lua",
-      robot_config_file_,
-      config_path_ + "/config/enml.lua"});
-  options->minimum_node_translation = CONFIG_min_translation;
-  options->minimum_node_rotation = CONFIG_min_rotation;
-  options->max_update_period = CONFIG_max_update_period;
+    std::string(config_dir_) + "/common.lua",
+    std::string(config_dir_) + "/" + std::string(robot_config_),
+    std::string(config_dir_) + "/enml.lua"
+  });
   options->kMinRange = CONFIG_min_point_cloud_range;
   options->kMaxRange = CONFIG_max_point_cloud_range;
   options->kMaxPointToLineDistance = CONFIG_max_point_to_line_distance;
@@ -497,7 +494,7 @@ void SaveStfs(
   ScopedFile fid(stfs_file, "w");
   fprintf(fid(), "%s\n", map_name.c_str());
   fprintf(fid(), "%lf\n", timestamp);
-  VectorMap map(kMapsDirectory + "/" + map_name + ".txt");
+  VectorMap map(std::string(maps_dir_) + "/" + map_name + ".txt");
   if (kDisplaySteps) {
     visualization::ClearVisualizationMsg(visualization_msg_);
     nonblock(true);
@@ -1268,7 +1265,7 @@ void SaveSensorErrors(
     const vector<PointCloudf>& point_clouds,
     const vector<vector<NonMarkovLocalization::ObservationType> >&
         classifications) {
-  VectorMap map(kMapsDirectory + "/" + kMapName + ".txt");
+  VectorMap map(std::string(maps_dir_) + "/" + kMapName + ".txt");
   ScopedFile fid("results/sensor_errors.txt", "w");
   printf("Saving sensor errors... ");
   fflush(stdout);
@@ -1825,6 +1822,8 @@ int main(int argc, char** argv) {
   signal(SIGALRM,HandleStop);
   google::InitGoogleLogging(argv[0]);
   google::LogToStderr();
+  // gflags::ParseCommandLineFlags(&argc, &argv, true);
+
   // CHECK(signal(SIGSEGV, &SegfaultHandler) != SIG_ERR);
 
   char* bag_file = NULL;
@@ -1835,9 +1834,13 @@ int main(int argc, char** argv) {
   bool unique_node_name = false;
   bool return_initial_poses = false;
   char* robot_config_opt = NULL;
-  char* config_path_opt = NULL;
+
+
 
   static struct poptOption options[] = {
+    { "config_dir", 'c', POPT_ARG_STRING, &config_dir_, 1, "Config directory", "STRING"},
+    { "robot_config", 'r', POPT_ARG_STRING, &robot_config_, 1, "Robot configuration file", "STRING"},
+    { "maps_dir", 'm', POPT_ARG_STRING, &maps_dir_, 1, "Maps directory", "STRING"},
     { "debug" , 'd', POPT_ARG_INT, &debug_level_, 1, "Debug level", "NUM" },
     { "bag-file", 'b', POPT_ARG_STRING, &bag_file, 1, "ROS bagfile to use",
         "STRING"},
@@ -1867,28 +1870,15 @@ int main(int argc, char** argv) {
         "Quiet", "NONE"},
     { "robot_config", 'r', POPT_ARG_STRING, &robot_config_opt, 0,
         "Robot config file", "STRING"},
-    { "config_path", 'r', POPT_ARG_STRING, &config_path_opt, 0,
-        "Common config directory", "STRING"},
-POPT_AUTOHELP
+    POPT_AUTOHELP
     { NULL, 0, 0, NULL, 0, NULL, NULL }
   };
   POpt popt(NULL,argc,(const char**)argv,options,0);
   int c;
   while((c = popt.getNextOpt()) >= 0){
   }
-
-  if (config_path_opt) {
-    config_path_ = config_path_opt;
-    // Update path to robot.lua and maps
-    robot_config_file_ = config_path_ + "/config/robot.lua";
-    kMapsDirectory = config_path_+"/maps";
-    printf("Using %s for config directory path.\n", config_path_.c_str());
-  }
-  if (robot_config_opt) {
-    robot_config_file_ = robot_config_opt;
-    printf("Using %s for robot config.\n", robot_config_file_.c_str());
-  }
-  localization_ = new NonMarkovLocalization(kMapsDirectory);
+  
+  localization_ = new NonMarkovLocalization(maps_dir_);
   CHECK(LoadConfiguration(&localization_options_));
 
   // if (bag_file == NULL) unique_node_name = true;
@@ -1923,5 +1913,7 @@ POPT_AUTOHELP
   } else {
     OnlineLocalize(!disable_stfs, &ros_node);
   }
+
+  delete localization_;
   return 0;
 }
