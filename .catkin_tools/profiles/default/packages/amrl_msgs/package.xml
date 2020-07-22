@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>amrl_msgs</name>
+  <version>0.0.1</version>
+  <description>
+    Common messages for the amrl organization.
+  </description>
+
+  <license>MIT</license>
+
+  <author email="joydeepb@cs.utexas.edu">Joydeep Biswas</author>
+  <maintainer email="joydeepb@cs.utexas.edu">Joydeep Biswas</maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+
+  <exec_depend>message_runtime</exec_depend>
+
+  <export>
+    <architecture_independent/>
+  </export>
+
+</package>

@@ -4,3 +4,24 @@
 [submodule "velodyne_simulator"]
 	path = src/velodyne_simulator
 	url = https://github.com/florianshkurti/velodyne_simulator
+[submodule "graph_navigation"]
+		path = src/amrl/graph_navigation
+		url = https://github.com/ut-amrl/graph_navigation.git
+[submodule "enml"]
+		path = src/amrl/enml
+		url = https://github.com/ut-amrl/enml.git
+[submodule "config-reader"]
+		path = src/amrl/config-reader
+		url = https://github.com/ut-amrl/config-reader.git
+[submodule "amrl_maps"]
+		path = src/amrl/amrl_maps
+		url = https://github.com/ut-amrl/amrl_maps.git
+[submodule "amrl_msgs"]
+		path = src/amrl_msgs
+		url = https://github.com/ut-amrl/amrl_msgs.git
+[submodule "amrl_msgs"]
+		path = src/amrl/amrl_msgs
+		url = https://github.com/ut-amrl/amrl_msgs.git
+[submodule "amrl_shared_lib"]
+		path = src/amrl/amrl_shared_lib
+		url = https://github.com/umass-amrl/amrl_shared_lib.git

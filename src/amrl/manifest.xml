@@ -1,0 +1,19 @@
+<package>
+  <description brief="amrl">
+
+    High level packages for running small/medium autonomous delivery
+
+  </description>
+  <author>Max Svetlik</author>
+  <license>GPLv3.0</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="std_msgs"/>
+  <depend package="nav_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="rosbag"/>
+  <depend package="visualization_msgs"/>
+  <depend package="tf"/>
+  <depend package="amrl_msgs"/>
+</package>
